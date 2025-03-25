@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_pytest_example_1742866089569-pr-trigger-input-set
+  identifier: Build_pytest_example_1742866089569prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Mantri
+  pipeline:
+    identifier: Build_pytest_example_1742866089569
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
