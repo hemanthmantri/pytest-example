@@ -23,14 +23,19 @@ pipeline:
                   identifier: runlinter
                   name: run linter
                   spec:
+                    connectorRef: account.harnessImage
+                    image: alpine:latest
                     shell: Sh
                     command: echo "hello"
                   timeout: ""
                   type: Run
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.abhijeettestk8s
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
         type: CI
+        description: ""
